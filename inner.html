@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="inner.css">
+    <title>Bhaskara</title>
+    <script>
+        function calcular() {
+            const valorA = document.getElementById("valorA").value;
+            const valorB = document.getElementById("valorB").value;
+            const valorC = document.getElementById("valorC").value;
+
+            const delta = (valorB * valorB) - (4 * valorA * valorC);
+            const raiz = Math.sqrt(delta);
+
+            if (valorA == 0) {
+                alert("O valor A não pode ser ZERO!")
+            }
+            else if (delta < 0) {
+                alert(`Não há raizes reais`)
+            }
+            else if (delta > 0) {
+                const x1 = (-valorB + raiz) / (valorA * 2)
+                const x2 = (-valorB - raiz) / (valorA * 2)
+                alert(`O valor de X1 é ${x1}, o valor de X2 é ${x2}`)
+            }
+            else {
+                alert("Houve algum erro!")
+            }
+        }
+        function Limpar() {
+            document.getElementById("valorA").value = "";
+            document.getElementById("valorB").value = "";
+            document.getElementById("valorC").value = "";
+            document.getElementById("Resultado").value = "";
+        }
+    </script>
+</head>
+
+<body>
+
+    <body>
+        <h1 id="titulo">Bhaskara</h1>
+        <h2 id="devs">Desenvolvedor: Cardoso</h2>
+        <form>
+            <div>
+                <label for="valorA">Valor A</label>
+                <input type="number" name="" id="valorA">
+            </div>
+            <div>
+                <label for="valorB">ValorB</label>
+                <input type="number" name="" id="valorB">
+            </div>
+            <div>
+                <label for="valorC">ValorC</label>
+                <input type="number" name="" id="valorC">
+            </div>
+            <div>
+                <button onclick="calcular()">Calcular</button>
+                <input type="button" value="Limpar" onclick="Limpar()">
+            </div>
+        </form>
+
+    </body>
+
+</body>
+
+</html>
