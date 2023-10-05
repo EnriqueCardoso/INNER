@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+body {
+    background-color: aqua;
+    height: 100%;
+    width: 100%;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: antiquewhite;
+    height: 600px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+h1,
+h2 {
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.centro {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.valorA {
+    background-color: white;
+    height: 5%;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 3%;
+    border-radius: 10px;
+    padding: auto;
+}
+
+.valorB {
+    background-color: white;
+    height: 5%;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 3%;
+    border-radius: 10px;
+    padding: auto;
+}
+
+.valorC {
+    background-color: white;
+    height: 5%;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 3%;
+    border-radius: 10px;
+}
+
+#resultado {
+    height: 8%;
+    width: 80%;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-top: 3%;
+}

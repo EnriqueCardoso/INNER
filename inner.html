@@ -11,6 +11,7 @@
             const valorA = document.getElementById("valorA").value;
             const valorB = document.getElementById("valorB").value;
             const valorC = document.getElementById("valorC").value;
+            let msn = ``;
 
             const delta = (valorB * valorB) - (4 * valorA * valorC);
             const raiz = Math.sqrt(delta);
@@ -18,52 +19,57 @@
             if (valorA == 0) {
                 alert("O valor A não pode ser ZERO!")
             }
-            else if (delta < 0) {
+            else if (delta <= 0) {
                 alert(`Não há raizes reais`)
             }
             else if (delta > 0) {
                 const x1 = (-valorB + raiz) / (valorA * 2)
                 const x2 = (-valorB - raiz) / (valorA * 2)
-                alert(`O valor de X1 é ${x1}, o valor de X2 é ${x2}`)
+                msn = msn + `O valor de X1 é ${x1} \n O valor de X2 é ${x2}`;
             }
             else {
                 alert("Houve algum erro!")
             }
+
+            document.getElementById("resultado").innerHTML = msn;
         }
-        function Limpar() {
+
+        function limpar() {
             document.getElementById("valorA").value = "";
             document.getElementById("valorB").value = "";
             document.getElementById("valorC").value = "";
-            document.getElementById("Resultado").value = "";
+            document.getElementById("resultado").innerHTML = "";
         }
     </script>
 </head>
 
 <body>
 
-    <body>
+    
+    <form>
         <h1 id="titulo">Bhaskara</h1>
         <h2 id="devs">Desenvolvedor: Cardoso</h2>
-        <form>
-            <div>
-                <label for="valorA">Valor A</label>
-                <input type="number" name="" id="valorA">
-            </div>
-            <div>
-                <label for="valorB">ValorB</label>
-                <input type="number" name="" id="valorB">
-            </div>
-            <div>
-                <label for="valorC">ValorC</label>
-                <input type="number" name="" id="valorC">
-            </div>
-            <div>
-                <button onclick="calcular()">Calcular</button>
-                <input type="button" value="Limpar" onclick="Limpar()">
-            </div>
-        </form>
+        <div class="valorA centro">
+            <label for="valorA">Valor A</label>
+            <input type="number" name="" id="valorA">
+        </div>
+        <div class="valorB centro">
+            <label for="valorB">ValorB</label>
+            <input type="number" name="" id="valorB">
+        </div>
+        <div class="valorC centro">
+            <label for="valorC">ValorC</label>
+            <input type="number" name="" id="valorC">
+        </div>
 
-    </body>
+        <div id="resultado">
+        </div>
+
+        <div class="calculoLimpar">
+            <input type="button" value="Calcular" onclick="calcular()">
+            <input type="button" value="Limpar" onclick="limpar()">     
+        </div>
+    </form>
 
 </body>
 
